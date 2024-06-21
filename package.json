@@ -1,0 +1,28 @@
+{
+	"name": "handy-cmd",
+	"version": "1.0.0",
+	"description": "A CLI-like app that you can use to run popular and simple commands through writing to a specific file (commands.txt).",
+	"type": "module",
+	"main": "src/main.js",
+	"scripts": {
+		"start": "nodemon .",
+		"test": "mocha src/**"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Sohila-Hashem/handyCmd"
+	},
+	"keywords": [],
+	"author": "Sohila Hashem",
+	"license": "ISC",
+	"dependencies": {
+		"chalk": "^5.3.0"
+	},
+	"devDependencies": {
+		"chai": "^5.1.1",
+		"chai-as-promised": "^8.0.0",
+		"mocha": "^10.4.0",
+		"nodemon": "^3.1.4",
+		"sinon": "^18.0.0"
+	}
+}
