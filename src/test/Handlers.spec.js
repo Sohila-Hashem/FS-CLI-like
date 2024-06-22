@@ -14,7 +14,6 @@ describe("Handlers", () => {
 
 	beforeEach(() => {
 		logSpy = sinon.spy(console, "log");
-		// TODO: add a spy on the Handlers methods to watch when they throw errors
 	});
 
 	afterEach(() => {
@@ -46,29 +45,6 @@ describe("Handlers", () => {
 		});
 	});
 
-	describe("#handleDeleteFile", () => {
-		it("deletes a file when the file does exists", async () => {
-			const content = "DELETE FILE tmp/test.txt;";
-
-			sinon.stub(fs, "unlink").resolves();
-
-			await Handlers.handleDeleteFile(content);
-
-			expect(logSpy.calledWith(chalk.greenBright('deleted a file at "tmp/test.txt"'))).to.be
-				.true;
-		});
-
-		it("log an error when the file does not exists or the path is wrong", async () => {
-			const content = "DELETE FILE tmp/test.txt;";
-
-			sinon.stub(fs, "unlink").rejects({ code: "ENOENT" });
-
-			await Handlers.handleDeleteFile(content);
-
-			expect(logSpy.calledOnce).to.be.true;
-		});
-	});
-
 	describe("#handleCreateFolder", () => {
 		it("creates a folder when the folder does not exists", async () => {
 			const content = "CREATE FOLDER tmp;";
@@ -93,6 +69,29 @@ describe("Handlers", () => {
 		});
 	});
 
+	describe("#handleDeleteFile", () => {
+		it("deletes a file when the file does exists", async () => {
+			const content = "DELETE FILE tmp/test.txt;";
+
+			sinon.stub(fs, "unlink").resolves();
+
+			await Handlers.handleDeleteFile(content);
+
+			expect(logSpy.calledWith(chalk.greenBright('deleted a file at "tmp/test.txt"'))).to.be
+				.true;
+		});
+
+		it("log an error when the file does not exists or the path is wrong", async () => {
+			const content = "DELETE FILE tmp/test.txt;";
+
+			sinon.stub(fs, "unlink").rejects({ code: "ENOENT" });
+
+			await Handlers.handleDeleteFile(content);
+
+			expect(logSpy.calledOnce).to.be.true;
+		});
+	});
+
 	describe("#handleDeleteFolder", () => {
 		it("deletes a folder when the folder does exists", async () => {
 			const content = "DELETE FOLDER tmp;";
@@ -112,6 +111,42 @@ describe("Handlers", () => {
 			await Handlers.handleDeleteFolder(content);
 
 			expect(logSpy.calledOnce).to.be.true;
+		});
+	});
+
+	describe("#handleDeleteForce", () => {
+		it("deletes a nested folder when the path does exists (or not)", async () => {
+			const content = "DELETE tmp-1/tmp-2/tmp-3 FORCE;";
+			const path = "tmp-1/tmp-2/tmp-3";
+
+			sinon.stub(fs, "rm").calledWith(path, { recursive: true, force: true });
+
+			await Handlers.handleDeleteForce(content);
+
+			expect(
+				logSpy.calledWith(
+					chalk.greenBright(
+						'file/folder at "tmp-1/tmp-2/tmp-3" is deleted (or not found!)'
+					)
+				)
+			).to.be.true;
+		});
+
+		it("deletes a nested file when the path does exists (or not)", async () => {
+			const content = "DELETE tmp-1/tmp-2/tmp-3.txt FORCE;";
+			const path = "tmp-1/tmp-2/tmp-3.txt";
+
+			sinon.stub(fs, "rm").calledWith(path, { recursive: true, force: true });
+
+			await Handlers.handleDeleteForce(content);
+
+			expect(
+				logSpy.calledWith(
+					chalk.greenBright(
+						'file/folder at "tmp-1/tmp-2/tmp-3.txt" is deleted (or not found!)'
+					)
+				)
+			).to.be.true;
 		});
 	});
 

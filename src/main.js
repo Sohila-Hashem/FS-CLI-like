@@ -1,7 +1,7 @@
 import fs from "fs/promises";
 
 import { Handlers } from "./Handlers.js";
-import constants from "./config/CONSTANTS.js";
+import constants from "./config/constants/COMMANDS.js";
 
 /**
  * @param {String} pathToWatchedFile - path to watched file
@@ -81,7 +81,5 @@ const handyCmd = async (pathToWatchedFile) => {
 		console.log(`${error}`);
 	}
 };
-
-handyCmd("commands.txt");
 
 export default handyCmd;
