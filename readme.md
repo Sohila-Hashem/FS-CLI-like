@@ -45,8 +45,18 @@ A CMD-like app that you can use to run popular and simple commands through writi
 
 # Tech Stack
 
--   Node.js/Javascript
--   [Chalk](!https://www.npmjs.com/package/chalk) npm package to print colorful logging messages
+    Node.js/Javascript
+
+## dependencies
+
+[Chalk](https://www.npmjs.com/package/chalk) npm package to print colorful logging messages
+
+## devDependencies
+
+[mocha](https://mochajs.org/) testing framework
+[chai](https://www.chaijs.com/) mocha assertion library
+[nodemon](https://www.npmjs.com/package/nodemon) package for automatic restarts
+[sinon](https://sinonjs.org/releases/v18/) library for creating more detailed unit testing
 
 # Get Started
 
@@ -56,7 +66,7 @@ A CMD-like app that you can use to run popular and simple commands through writi
 
 ## Option 2: Install the npm package
 
-    npm i handy-cmd
+    npm i handy-cmd --save-dev
 
 # Usage Instructions
 
