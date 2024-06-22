@@ -2,12 +2,9 @@ import fs from "fs/promises";
 
 import chalk from "chalk";
 import { expect, use } from "chai";
-import chaiAsPromised from "chai-as-promised";
 import sinon from "sinon";
 
 import { Handlers } from "../Handlers.js";
-
-use(chaiAsPromised);
 
 describe("Handlers", () => {
 	let logSpy;
