@@ -54,8 +54,11 @@ A CMD-like app that you can use to run popular and simple commands through writi
 ## devDependencies
 
 [mocha](https://mochajs.org/) testing framework
+
 [chai](https://www.chaijs.com/) mocha assertion library
+
 [nodemon](https://www.npmjs.com/package/nodemon) package for automatic restarts
+
 [sinon](https://sinonjs.org/releases/v18/) library for creating more detailed unit testing
 
 # Get Started
