@@ -43,6 +43,21 @@ A CMD-like app that you can use to run popular and simple **filesystem** command
 -   you can add as many commands as possible in the file in one change but, take into consideration that the commands will not run sequentially as defined.
     > it is recommended to use each command at a time to avoid any strange output.
 
+# Get Started
+
+## Option 1: Clone the repository
+
+    git clone https://github.com/Sohila-Hashem/HandyCmd.git
+
+## Option 2: Install the npm package
+
+    npm i handy-cmd --save-dev
+
+# Usage Instructions
+
+-   after setting up the project, make sure to create a text file in the root directory with the name of your choice.
+-   import/require the main function then pass the path to the created text file.
+
 # Tech Stack
 
     Node.js/Javascript
@@ -60,18 +75,3 @@ A CMD-like app that you can use to run popular and simple **filesystem** command
 [nodemon](https://www.npmjs.com/package/nodemon) package for automatic restarts
 
 [sinon](https://sinonjs.org/releases/v18/) library for creating more detailed unit testing
-
-# Get Started
-
-## Option 1: Clone the repository
-
-    git clone https://github.com/Sohila-Hashem/HandyCmd.git
-
-## Option 2: Install the npm package
-
-    npm i handy-cmd --save-dev
-
-# Usage Instructions
-
--   after setting up the project, make sure to create a text file in the root directory with the name of your choice.
--   import/require the main function then pass the path to the created text file.
