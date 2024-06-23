@@ -26,11 +26,11 @@ A CMD-like app that you can use to run popular and simple commands through writi
 
 ### Append to a file
 
-    APPEND TO ./path/to/file THIS CONTENT: "..."
+    APPEND TO ./path/to/file THIS CONTENT: "...";
 
 ### Write to a file
 
-    WRITE TO ./path/to/file THIS CONTENT: "..."
+    WRITE TO ./path/to/file THIS CONTENT: "...";
 
 ### Rename a file/folder
 
