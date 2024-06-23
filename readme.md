@@ -1,6 +1,6 @@
 # About
 
-A CMD-like app that you can use to run popular and simple commands through writing to a specific text file of your choice.
+A CMD-like app that you can use to run popular and simple **filesystem** commands through writing to a specific text file of your choice.
 
 ## Available Commands to Use
 
@@ -38,9 +38,9 @@ A CMD-like app that you can use to run popular and simple commands through writi
 
 ## Precautions
 
--   every command **must** end with a **semi-color (\;)** to distinguish the content of every command.
+-   every command **must** end with a **semi-color (\;)** to distinguish the content of it.
 -   every **command** is **case-sensitive**. so you must follow the command pattern as described.
--   you can add as many commands as possible in the file in one change, but take into consideration that the commands will not be executed sequentially as defined.
+-   you can add as many commands as possible in the file in one change but, take into consideration that the commands will not run sequentially as defined.
     > it is recommended to use each command at a time to avoid any strange output.
 
 # Tech Stack
@@ -74,4 +74,4 @@ A CMD-like app that you can use to run popular and simple commands through writi
 # Usage Instructions
 
 -   after setting up the project, make sure to create a text file in the root directory with the name of your choice.
--   import/require the main function and pass the path to the created text file.
+-   import/require the main function then pass the path to the created text file.
