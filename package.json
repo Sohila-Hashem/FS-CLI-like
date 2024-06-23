@@ -1,6 +1,6 @@
 {
 	"name": "handy-cmd",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "A CLI-like app that you can use to run popular and simple commands through writing to a specific text file",
 	"type": "module",
 	"main": "src/main.js",
